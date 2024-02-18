@@ -114,10 +114,6 @@ services:
     - /DATA/AppData/config/Adguard/Workdir:/opt/adguardhome/work
     - /DATA/AppData/config/Adguard/Conf:/opt/adguardhome/conf
    restart: unless-stopped
-   networks:
-    default:
-        external:
-            name: $DEFAULT_NETWORK
 
   duckdns:
     image: lscr.io/linuxserver/duckdns:latest
