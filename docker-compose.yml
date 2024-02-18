@@ -154,3 +154,15 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
+
+  homarr:
+    container_name: homarr
+    image: ghcr.io/ajnart/homarr:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Optional, only if you want docker integration
+      - /DATA/AppData/homarr/configs:/app/data/configs
+      - /DATA/AppData/homarr/icons:/app/public/icons
+      - /DATA/AppData/homarr/data:/data
+    # ports:
+    #  - '7575:7575'
