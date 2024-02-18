@@ -127,9 +127,6 @@ services:
       - LOG_FILE=false #optional
     volumes:
       - /DATA/AppData/config/duckdns:/config #optional
-    ports:
-     - 5353:53/tcp
-     - 5353:53
     restart: unless-stopped
 
   wireguard:
