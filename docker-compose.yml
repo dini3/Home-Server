@@ -130,7 +130,7 @@ services:
     volumes:
       - /DATA/AppData/config/duckdns:/config #optional
     restart: unless-stopped
-	
+
   wireguard:
     image: lscr.io/linuxserver/wireguard:latest
     container_name: wireguard
