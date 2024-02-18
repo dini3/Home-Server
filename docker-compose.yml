@@ -105,8 +105,8 @@ services:
     - PUID=1000
    ports:
     - 3000:3000/tcp
-    - 5353:53/tcp
-    - 5353:53/udp
+    - 53:53/tcp
+    - 53:53/udp
     - 82:80/tcp
     # - 67:67/udp
     # - 853:853/tcp
@@ -127,6 +127,9 @@ services:
       - LOG_FILE=false #optional
     volumes:
       - /DATA/AppData/config/duckdns:/config #optional
+    ports:
+     - 5353:53/tcp
+     - 5353:53
     restart: unless-stopped
 
   wireguard:
