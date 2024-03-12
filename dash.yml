@@ -10,6 +10,6 @@ services:
       - /:/mnt/host:ro
     environment:
       DASHDOT_WIDGET_LIST: 'os,cpu,storage,ram,network'
-      DASHDOT_ENABLE_CPU_TEMPS: true
-      DASHDOT_SHOW_HOST: true
+      DASHDOT_ENABLE_CPU_TEMPS: "true"
+      DASHDOT_SHOW_HOST: "true"
       DASHDOT_CUSTOM_HOST: "deenee"

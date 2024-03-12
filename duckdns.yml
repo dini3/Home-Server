@@ -5,9 +5,9 @@ services:
     environment:
       - PUID=1000 # default user id, defined in .env
       - PGID=1000 # default group id, defined in .env
-      - TZ=Asia/Singapore # timezone, defined in .env
-      - SUBDOMAINS=deenee.duckdns.org
-      - TOKEN=9736ad1d-27dd-4b9a-97e5-2bc673880e0b
+      - TZ=Etc/UTC # timezone, defined in .env
+      - SUBDOMAINS=subdomain1,subdomain2
+      - TOKEN=token
       - LOG_FILE=false #optional
     volumes:
       - /DATA/AppData/config/duckdns:/config #optional

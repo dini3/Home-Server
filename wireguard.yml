@@ -8,8 +8,8 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Asia/Singapor
-      - SERVERURL=deenee.duckdns.org #optional
+      - TZ=Etc/UTC
+      - SERVERURL=wireguard.domain.com #optional
       - SERVERPORT=51820 #optional
       - PEERS=5 #optional
       - PEERDNS=auto #optional

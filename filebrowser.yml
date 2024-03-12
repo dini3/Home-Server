@@ -6,7 +6,7 @@ services:
     ports:
       - 8081:80
     volumes:
-      - /:/srv
+      - /:/srv #directory to display
       - /DATA/AppData/config/filebrowser/filebrowser.db:/database.db
       - /DATA/AppData/config/filebrowser/settings.json:/settings.json
     restart: unless-stopped

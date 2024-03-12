@@ -24,5 +24,5 @@ compose_files=(
 for file in "${compose_files[@]}"; do
     # Run docker-compose for the current file
     echo "Running Docker Compose for $file"
-    # docker-compose -f "$file" up -d
+    docker-compose -f "$file" up -d --force-recreate
 done
