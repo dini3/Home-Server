@@ -1,18 +1,18 @@
 services:
-  jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
-    container_name: jellyfin
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Asia/Singapore
-      - JELLYFIN_PublishedServerUrl=192.168.0.5 #optional
-    volumes:
-      - /DATA/AppData/config/jellyfin:/config
-      - /DATA/Media:/data
-    ports:
-      - 8096:8096
-      - 8920:8920 #optional
-      - 7359:7359/udp #optional
-      - 1900:1900/udp #optional
-    restart: unless-stopped
+  adguard:
+   image:  adguard/adguardhome:latest
+   container_name: adguard
+   environment:
+    - PGID=1000
+    - PUID=1000
+   ports:
+    - 3000:3000/tcp
+    - 53:53/tcp
+    - 53:53/udp
+    - 82:80/tcp
+    # - 67:67/udp
+    # - 853:853/tcp
+   volumes:
+    - /DATA/AppData/config/Adguard/Workdir:/opt/adguardhome/work
+    - /DATA/AppData/config/Adguard/Conf:/opt/adguardhome/conf
+   restart: unless-stopped
