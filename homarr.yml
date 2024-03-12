@@ -8,5 +8,5 @@ services:
       - /DATA/AppData/config/homarr/configs:/app/data/configs
       - /DATA/AppData/config/homarr/icons:/app/public/icons
       - /DATA/AppData/config/homarr/data:/data
-    # ports:
-    #  - '7575:7575'
+     ports:
+      - '7575:7575'
