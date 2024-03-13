@@ -7,12 +7,13 @@ This guide provides instructions and scripts for setting up a comprehensive home
     - [Docker Installation](#docker-installation)
     - [Docker Compose](#docker-compose)
 2. [Default Configuration](#default-configuration)
+    - [Services](#services)
     - [Ports](#ports)
     - [File Layout](#file-layout)
-3. [Laptop Servers](#laptop-servers)
+4. [Laptop Servers](#laptop-servers)
     - [Preventing Sleep on Lid Close](#preventing-sleep-on-lid-close)
     - [Screen Timeout Configuration](#screen-timeout)
-4. [Misc](#misc)  
+5. [Misc](#misc)  
 
 ## Installation
 
@@ -36,9 +37,9 @@ Clone the repository and configure Docker Compose to set up the desired services
 ```bash
 # Array of Docker Compose YAML files
 compose_files=(
-    "adguard.yml"
-    "dash.yml"
-    "duckdns.yml"
+    	"adguard.yml"
+   	 "dash.yml"
+    	"duckdns.yml"
 	"filebrowser.yml"
 	"guacamole.yml"
 	"homarr.yml"
@@ -61,6 +62,25 @@ chmod +x run-compose.sh
 ```
 
 ## Default Configuration
+###Services
+To simplify setup, this repository includes Docker Compose files for various services:
+
+- [Adguard](https://hub.docker.com/r/adguard/adguardhome)
+- [Dash](https://github.com/MauriceNino/dashdot)
+- [DuckDNS](https://github.com/linuxserver/docker-duckdns)
+- [File Browser](https://github.com/filebrowser/filebrowser)
+- [Guacamole](https://hub.docker.com/r/jwetzell/guacamole)
+- [Homarr](https://ghcr.io/ajnart/homarr)
+- [Jellyfin](https://github.com/linuxserver/docker-jellyfin)
+- [Jellyseer](https://github.com/fallenbagel/jellyseerr)
+- [Nginx Proxy Manager](https://github.com/NginxProxyManager/nginx-proxy-manager)
+- [Portainer](https://github.com/portainer/portainer)
+- [Prowlarr](https://github.com/linuxserver/docker-prowlarr)
+- [qBittorrent](https://github.com/linuxserver/docker-qbittorrent)
+- [Radarr](https://github.com/linuxserver/docker-radarr)
+- [Sonarr](https://github.com/linuxserver/docker-sonarr)
+- [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
+- [Wireguard](https://docs.linuxserver.io/images/docker-wireguard/#server-mode)
 ### Ports
 If ports are not changed in the yml file, the following are the ports for the web interface.
 
