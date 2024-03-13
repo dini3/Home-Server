@@ -9,7 +9,13 @@ services:
     volumes:
       - /:/mnt/host:ro
     environment:
-      DASHDOT_WIDGET_LIST: 'os,cpu,storage,ram,network'
+      DASHDOT_WIDGET_LIST: 'os,cpu,storage,ram,network,gpu'
       DASHDOT_ENABLE_CPU_TEMPS: "true"
       DASHDOT_SHOW_HOST: "true"
-      DASHDOT_CUSTOM_HOST: "deenee"
+      DASHDOT_CUSTOM_HOST: ""
+    deploy: # for GPU
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
