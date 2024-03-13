@@ -1,6 +1,6 @@
 # Home-Server Setup Guide
 
-This guide provides instructions and scripts for setting up a comprehensive home server environment using Docker and Docker Compose quickly.
+This short guide provides instructions and scripts for setting up a home server environment using Docker and Docker Compose quickly.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -32,7 +32,7 @@ Clone the repository and configure Docker Compose to set up the desired services
 
 ```
 
-2. Leave it as default or change the configuration (folder, ports, etc). Comment out the files you don't want to run on run-compose.sh. Remember to add token and domain to Wireguard and DuckDNS.
+2. Leave it as default or change the configuration (folder, ports, etc). Comment out the files you don't want to run on `run-compose.sh`. Remember to add token and domain to Wireguard and DuckDNS.
 
 ```bash
 # Array of Docker Compose YAML files
@@ -158,16 +158,16 @@ sudo systemctl restart systemd-logind.service && sudo update-grub
 ```
 ## Misc
 
-If you have issues with adguard regarding port 53. Port 53 is being used at your host machine, that's why you can not bind 53 to host.
+If you have issues with adguard regarding port 53. Port 53 is likely being used at your host machine, that's why you can not bind 53.
 ```bash
 sudo systemctl disable systemd-resolved.service
 sudo systemctl stop systemd-resolved
 ```
-To fix that, you need to edit '/etc/resolv.conf' and add the dns address. This is an example with a common dns address:
+To fix that, you need to edit `/etc/resolv.conf` and add the dns address. This is an example with a common dns address:
 ```
 nameserver 8.8.8.8
 ```
-Once adguard docker container gets running, you can change the dns server of your host to localhost, as you are binding port 53 to the host machine. Change again '/etc/resolv.conf' like this
+Once adguard docker container gets running, you can change the dns server of your host to localhost, as you are binding port 53 to the host machine. Change again `/etc/resolv.conf` like this
 ```
 nameserver 127.0.0.1
 ```
