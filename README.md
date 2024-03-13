@@ -62,7 +62,7 @@ chmod +x run-compose.sh
 ```
 
 ## Default Configuration
-###Services
+### Services
 To simplify setup, this repository includes Docker Compose files for various services:
 
 - [Adguard](https://hub.docker.com/r/adguard/adguardhome)
