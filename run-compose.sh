@@ -21,6 +21,7 @@ compose_files=(
 	"sonarr.yml"
 	"vaultwarden.yml"
 	"wireguard.yml"
+ 	"watchtower.yml"
 )
 
 # Loop through each Docker Compose YAML file
