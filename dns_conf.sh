@@ -18,6 +18,8 @@ sudo sed -i 's/^nameserver .*/nameserver '"$ADGUARD_DNS_IP"'/' /etc/resolv.conf
 if ! grep -q "^nameserver" /etc/resolv.conf; then
     echo "nameserver $ADGUARD_DNS_IP" | sudo tee -a /etc/resolv.conf
 fi
+
+sudo systemctl stop systemd-resolved
 EOF
 
 # Make the script executable
