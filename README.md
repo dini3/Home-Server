@@ -13,7 +13,7 @@ This short guide provides instructions and scripts for setting up a home server 
 4. [Laptop Servers](#laptop-servers)
     - [Preventing Sleep on Lid Close](#preventing-sleep-on-lid-close)
     - [Screen Timeout Configuration](#screen-timeout)
-5. [AdGuard Home Default Configuration](#misc)  
+5. [AdGuard Home Default Configuration](#adguard-home-default-configuration)  
 
 ## Installation
 
@@ -53,6 +53,7 @@ compose_files=(
 	"sonarr.yml"
 	"vaultwarden.yml"
 	"wireguard.yml"
+	"watchtower.yml"
 )
 ```
 3. Run docker compose
@@ -81,6 +82,7 @@ To simplify setup, this repository includes Docker Compose files for various ser
 - [Sonarr](https://github.com/linuxserver/docker-sonarr)
 - [Vaultwarden](https://github.com/dani-garcia/vaultwarden)
 - [Wireguard](https://docs.linuxserver.io/images/docker-wireguard/#server-mode)
+- [Watchtower](https://containrrr.dev/watchtower/)
 ### Ports
 If ports are not changed in the yml file, the following are the ports for the web interface.
 
