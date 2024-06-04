@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create Folders
+sudo mkdir -p DATA/{AppData/config,Downloads/{radarr,tv-sonarr,torrent-blackhole},Media/{Movies,TV}}
+
 # Array of Docker Compose YAML files
 compose_files=(
     "adguard.yml"
