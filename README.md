@@ -13,7 +13,7 @@ This short guide provides instructions and scripts for setting up a home server 
 4. [Laptop Servers](#laptop-servers)
     - [Preventing Sleep on Lid Close](#preventing-sleep-on-lid-close)
     - [Screen Timeout Configuration](#screen-timeout)
-5. [Misc](#misc)  
+5. [AdGuard Home Default Configuration](#misc)  
 
 ## Installation
 
@@ -156,18 +156,12 @@ GRUB_CMDLINE_LINUX="consoleblank=300"
 ```bash
 sudo systemctl restart systemd-logind.service && sudo update-grub
 ```
-## Misc
+## AdGuard Home Default Configuration
 
-If you have issues with adguard regarding port 53. Port 53 is likely being used at your host machine, that's why you can not bind 53.
-```bash
-sudo systemctl disable systemd-resolved.service
-sudo systemctl stop systemd-resolved
+If you're using the default configuration for AdGuard Home, it binds to port 53 `(0.0.0.0`), which may conflict with other services on the host machine.
+You can run `dns_conf.sh` to automatically update the DNS nameserver configuration on every reboot to resolve the conflicts.
 ```
-To fix that, you need to edit `/etc/resolv.conf` and add the dns address. This is an example with a common dns address:
+sudo chmod +x dns_conf.sh
+sudo ./dns_conf.sh
 ```
-nameserver 8.8.8.8
-```
-Once adguard docker container gets running, you can change the dns server of your host to localhost, as you are binding port 53 to the host machine. Change again `/etc/resolv.conf` like this
-```
-nameserver 127.0.0.1
-```
+This script restarts `systemd-resolved` and updates `/etc/resolv.conf` to use the local machine nameserver (`127.0.0.1`) for DNS resolution.
