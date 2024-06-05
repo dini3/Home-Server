@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Create Folders
-sudo mkdir -p DATA/{AppData/config,Downloads/{radarr,tv-sonarr,torrent-blackhole},Media/{Movies,TV}}
+# Create Directories
+sudo mkdir -p /DATA/{AppData/config,Downloads/{radarr,tv-sonarr,torrent-blackhole},Media/{Movies,TV}}
+
+# Set permissions
+sudo chown -R 1000:1000 /DATA
+sudo chmod -R 775 /DATA
 
 # Array of Docker Compose YAML files
 compose_files=(
